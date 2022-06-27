@@ -3,7 +3,6 @@ import {
     PluginSettingTab,
     Setting
 } from 'obsidian';
-import { DayPlannerMode }from './settings';
 import MomentDateRegex from './moment-date-regex';
 import type DayPlanner from './main';
 import { ICONS } from './constants';
@@ -20,41 +19,6 @@ import { ICONS } from './constants';
       const { containerEl } = this;
   
       containerEl.empty();
-
-      new Setting(containerEl)
-        .setName('Day Planner Mode')
-        .setDesc(this.modeDescriptionContent())
-        .addDropdown(dropDown => 
-          dropDown
-            .addOption(DayPlannerMode[DayPlannerMode.File], "File mode")
-            .addOption(DayPlannerMode[DayPlannerMode.Command], "Command mode")
-            .setValue(DayPlannerMode[this.plugin.settings.mode] || DayPlannerMode.File.toString())
-            .onChange((value:string) => {
-              this.plugin.settings.mode = DayPlannerMode[value as keyof typeof DayPlannerMode];
-              this.plugin.saveData(this.plugin.settings);
-            }));
-
-      new Setting(containerEl)
-        .setName('Complete past planner items')
-        .setDesc('The plugin will automatically mark checkboxes for tasks and breaks in the past as complete')
-        .addToggle(toggle => 
-          toggle
-            .setValue(this.plugin.settings.completePastItems)
-            .onChange((value:boolean) => {
-              this.plugin.settings.completePastItems = value;
-              this.plugin.saveData(this.plugin.settings);
-            }));
-
-      new Setting(containerEl)
-        .setName('Mermaid Gantt')
-        .setDesc('Include a mermaid gantt chart generated for the day planner')
-        .addToggle(toggle => 
-          toggle
-            .setValue(this.plugin.settings.mermaid)
-            .onChange((value:boolean) => {
-              this.plugin.settings.mermaid = value;
-              this.plugin.saveData(this.plugin.settings);
-            }));
 
       new Setting(containerEl)
         .setName('Status Bar - Circular Progress')
@@ -136,22 +100,6 @@ import { ICONS } from './constants';
                 this.plugin.settings.endLabel = value
                 this.plugin.saveData(this.plugin.settings);
               }));
-    }
-
-    private modeDescriptionContent(): DocumentFragment {
-      const descEl = document.createDocumentFragment();
-      descEl.appendText('Choose between 2 modes to use the Day Planner plugin:');
-      descEl.appendChild(document.createElement('br'));
-      descEl.appendChild(document.createElement('strong')).appendText('File mode');
-      descEl.appendChild(document.createElement('br'));
-      descEl.appendText('Plugin automatically generates day planner notes for each day within a Day Planners folder.');
-      descEl.appendChild(document.createElement('br'));
-      descEl.appendChild(document.createElement('strong')).appendText('Command mode');
-      descEl.appendChild(document.createElement('br'));
-      descEl.appendText('Command used to insert a Day Planner for today within the current note.');
-      descEl.appendChild(document.createElement('br'));
-      this.addDocsLink(descEl);
-      return descEl;
     }
 
     private addDocsLink(descEl: DocumentFragment) {

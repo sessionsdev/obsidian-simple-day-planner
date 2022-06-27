@@ -1,9 +1,4 @@
 export class DayPlannerSettings {
-  customFolder: string = 'Day Planners';
-  mode: DayPlannerMode = DayPlannerMode.File;
-  mermaid: boolean = false;
-  notesToDates: NoteForDate[] = [];
-  completePastItems: boolean = true;
   circularProgress: boolean = false;
   nowAndNextInStatusBar: boolean = false;
   showTaskNotification: boolean = false
@@ -33,8 +28,4 @@ export class NoteForDateQuery {
     return source && source.filter(ntd => ntd.date === now)[0];
   }
 }
-  
-export enum DayPlannerMode {
-  File,
-  Command
-}
+ 

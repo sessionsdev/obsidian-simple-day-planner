@@ -46,7 +46,6 @@ export class PlanSummaryData {
             console.log(error)
         }
     }
-
 }
 
 export class PlanItem {

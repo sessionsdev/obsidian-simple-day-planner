@@ -3,72 +3,31 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jdbeightol/obsidian-simple-day-planner/Release%20Build?logo=github&style=for-the-badge) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jdbeightol/obsidian-simple-day-planner?style=for-the-badge&sort=semver)
 
 
-This repository contains a plugin for [Obsidian](https://obsidian.md/) for day planning from a list in a Markdown note. 
+This repository contains a plugin for [Obsidian](https://obsidian.md/) for day planning from a list in a Markdown note.  It was forked from James Lynch's [Obsidian Day Planner](https://github.com/lynchjames/obsidian-day-planner) plugin and serves as a simpler implementation.
 
-> This is an early alpha of version of the plugin and it will be running constantly in the background while Obsidian is open and the plugin is enabled. **Please try the plugin in a test vault first, and, most importantly, make sure you have your notes backed up in cloud storage or Git.**
-    
+What does simpler mean?
+- This plugin shall not mutate a user's notes i.e.,
+  - Removal of automatic completion of tasks
+  - Removal of automated management of mermaid gantt charts
+- This plugin shall prefer convention over configuration for its workflow i.e.,
+  - File mode has been changed to support a user's daily note as managded by the Obsidian daily note plugin
+  - Command mode has been fully removed
+
 ## Features
 
 - Uses your daily Obsidian note to generate a day plan.
-- Does not mutate your note.
 - Status bar updates on progress with information on your current and next tasks. You can click on the status bar to access the note for today's day planner.
 - Timeline view showing your tasks laid out on a vertical timeline.
 
-<!-- TODO -->
-![Day Planner Demo Image](https://raw.githubusercontent.com/lynchjames/obsidian-day-planner/main/images/day-planner-note-preview.png)
+![Day Planner Demo Image](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/day-planner-note-preview.png)
 
 ## Usage
 
-Once installed, the plugin will read your daily note as configured by you to display your daily plan.
+Once installed, the plugin will read your daily note as configured by the obsidian daily note plugin to display your daily plan.
 
 ### Day Planner Note
 
-Within the note, you can create a list of times and tasks which will be automatically be tracked during the day. You can include headings and other content between tasks. Here is an example:
-
-<!-- TODO -->
-```markdown
-## Day Planner
-
-This is my plan for the day broken into 3 main sections:
-1. Morning Prep
-2. Reading
-3. Afternoon Review
-
-### Morning Prep
-
-This is where I get ready for work and do my usual prep.
-
-- [ ] 09:30 Setup for work
-- [ ] 09:45 Review notes from yesterday
-- [ ] 10:30 Create new notes for #article review
-- 11:30 BREAK
-
-### Reading
-
-A section of the day dedicated to reading:
-
-1. Articles.
-2. Book chapters assigned for the day.
-3. Re-reading past notes.
-   
-- [ ] 12:00 Reading
-  - [ ] Article 1
-  - [ ] Article 2
-  - [ ] Article notes review
-- 12:25 BREAK
-- [ ] 12:30 Reading
-- 14:00 BREAK
-
-### Afternoon Review
-
-I use this time to review what I have done earlier in the day and complete any tasks to prepare for the next day.
-
-- [ ] 15:00 Review notes and update daily note [[20201103]]
-- [ ] 15:45 Walk
-- [ ] 16:30 Reading
-- [ ] 17:20 Prep for tomorrow's meetings
-- 18:00 END
-```
+Within the note, you can create a list of times and tasks which will be automatically be tracked during the day. You can include headings and other content between tasks.  See [examples/day-planner-example.md](examples/day-planner-example.md) for an example.
 
 The `Day Planner` heading and `---` rule are used to identify the extent of the Day Planner. A heading must be used but can be `#`, `##`, `###` or `####`.
 
@@ -89,7 +48,7 @@ The format of the task list items is important as this is what is used to calcul
 
 The `Show the Day Planner Timeline` command can be used to add a vertical timeline view display the tasks for today's Day Planner with a line showing the current time.
 
-![Day Planner Timeline](https://raw.githubusercontent.com/lynchjames/obsidian-day-planner/main/images/day-planner-timeline.png)
+![Day Planner Timeline](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/day-planner-timeline.png)
 
 ### Status Bar
 
@@ -99,19 +58,19 @@ The status bar in Obsidian will also show the current progress on the task or br
 
 The status displayed when there is an active task:
 
-![Task Status](https://raw.githubusercontent.com/lynchjames/obsidian-day-planner/main/images/task-status.png)
+![Task Status](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/task-status.png)
 
 #### Break Status
 
 The status displayed during a break:
 
-![Break Status](https://raw.githubusercontent.com/lynchjames/obsidian-day-planner/main/images/break-status.png)
+![Break Status](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/break-status.png)
 
 #### End Status
 
 The status displayed when the end of the tasks is reached:
 
-![End Status](https://raw.githubusercontent.com/lynchjames/obsidian-day-planner/main/images/end-status.png)
+![End Status](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/end-status.png)
 
 ## Configuration
 
@@ -119,13 +78,13 @@ The status displayed when the end of the tasks is reached:
 
 You can choose to display progress in the status bar with a circular pie chart progress bar to save horizontal space.
 
-![Circular Progress Bar](https://raw.githubusercontent.com/lynchjames/obsidian-day-planner/main/images/circular-progress.png)
+![Circular Progress Bar](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/circular-progress.png)
 
 ### Status Bar - Now and Next
 
 You can choose to display the time and start of the text for the current and next task.
 
-![Now and Next](https://raw.githubusercontent.com/lynchjames/obsidian-day-planner/main/images/now-and-next.png)
+![Now and Next](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/now-and-next.png)
 
 ### Task Notification
 
@@ -145,7 +104,7 @@ The current API of this repo targets Obsidian **v0.9.10**.
 
 ## Manual installation
 
-1. Download the [latest release](https://github.com/lynchjames/obsidian-day-planner/releases/latest)
+1. Download the [latest release](https://github.com/jdbeightol/obsidian-simple-day-planner/releases/latest)
 1. Extract the obsidian-simple-day-planner folder from the zip to your vault's plugins folder: `<vault>/.obsidian/plugins/`  
 Note: On some machines the `.obsidian` folder may be hidden. On MacOS you should be able to press `Command+Shift+Dot` to show the folder in Finder.
 1. Reload Obsidian
