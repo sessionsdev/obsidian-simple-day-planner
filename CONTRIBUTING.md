@@ -1,6 +1,6 @@
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via an [issue](https://github.com/lynchjames/obsidian-day-planner/issues), or with the maintainer on the [Obsidian Forum](https://forum.obsidian.md/u/j_l/summary) before making a change. 
+When contributing to this repository, please first discuss the change you wish to make via an [issue](https://github.com/jdbeightol/obsidian-simple-day-planner/issues), or with the maintainer on the [Obsidian Forum](https://forum.obsidian.md/u/j_l/summary) before making a change. 
 
 I have included a code of conduct, please follow it in all your interactions with the development of this plugin.
 

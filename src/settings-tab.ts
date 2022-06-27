@@ -156,7 +156,7 @@ import { ICONS } from './constants';
 
     private addDocsLink(descEl: DocumentFragment) {
       const a = document.createElement('a');
-      a.href = 'https://github.com/lynchjames/obsidian-day-planner/blob/main/README.md';
+      a.href = 'https://github.com/jdbeightol/obsidian-simple-day-planner/blob/main/README.md';
       a.text = 'plugin README';
       a.target = '_blank';
       descEl.appendChild(a);

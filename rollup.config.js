@@ -5,7 +5,7 @@ import copy from 'rollup-plugin-copy';
 import svelte from "rollup-plugin-svelte";
 import autoPreprocess from 'svelte-preprocess';
 
-const TEST_VAULT = 'test-vault/.obsidian/plugins/obsidian-day-planner';
+const TEST_VAULT = 'test-vault/.obsidian/plugins/obsidian-simple-day-planner';
 
 export default {
   input: 'src/main.ts',
