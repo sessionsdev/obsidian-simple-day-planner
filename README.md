@@ -146,7 +146,7 @@ The current API of this repo targets Obsidian **v0.9.10**.
 ## Manual installation
 
 1. Download the [latest release](https://github.com/lynchjames/obsidian-day-planner/releases/latest)
-1. Extract the obsidian-day-planner folder from the zip to your vault's plugins folder: `<vault>/.obsidian/plugins/`  
+1. Extract the obsidian-simple-day-planner folder from the zip to your vault's plugins folder: `<vault>/.obsidian/plugins/`  
 Note: On some machines the `.obsidian` folder may be hidden. On MacOS you should be able to press `Command+Shift+Dot` to show the folder in Finder.
 1. Reload Obsidian
 1. If prompted about Safe Mode, you can disable safe mode and enable the plugin.

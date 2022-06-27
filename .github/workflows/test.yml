@@ -10,7 +10,7 @@ on:
       - feature/*
 
 env:
-  PLUGIN_NAME: obsidian-day-planner # Change this to the name of your plugin-id folder
+  PLUGIN_NAME: obsidian-simple-day-planner # Change this to the name of your plugin-id folder
 
 jobs:
   build:
