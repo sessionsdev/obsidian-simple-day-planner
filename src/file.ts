@@ -19,27 +19,32 @@ export default class DayPlannerFile {
 
 
     todayPlannerFilePath(): string {
-        const { basename, extension } = getDailyNote(window.moment(), getAllDailyNotes());
-        const { folder } = getDailyNoteSettings();
+        const tf = getDailyNote(window.moment(), getAllDailyNotes());
+        const ipns = getDailyNoteSettings();
+        if (! tf || ! ipns) {
+            return null;
+        }
+        const { basename, extension } = tf;
+        const { folder } = ipns;
         return normalizePath(`${folder}/${basename}.${extension}`);
     }
 
     hasTodayNote(): boolean {
         const filename = this.todayPlannerFilePath();
         if (!filename) {
-            return false
+            return false;
         }
-        return true
+        return true;
     }
 
     async getFileContents(){
         if (!this.hasTodayNote()) {
-            return ""
+            return "";
         }
         try {
             return await this.vault.adapter.read(this.todayPlannerFilePath());
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 }

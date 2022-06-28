@@ -9,6 +9,8 @@ export const PLAN_PARSER_REGEX='^(((-(\\s+\\[?[x ]\\])?)(\\d.)?\\s+(?<hours>\\d{
 
 export const VIEW_TYPE_TIMELINE = 'timeline';
 
+export const TIMELINE_DEFAULT_ZOOM = 2;
+
 export const ICONS = [
   'any-key',
   'audio-file',

@@ -5,7 +5,7 @@ import {
 } from 'obsidian';
 import MomentDateRegex from './moment-date-regex';
 import type DayPlanner from './main';
-import { ICONS } from './constants';
+import { ICONS, TIMELINE_DEFAULT_ZOOM } from './constants';
   
 export class DayPlannerSettingsTab extends PluginSettingTab {
     momentDateRegex = new MomentDateRegex();
@@ -59,7 +59,7 @@ export class DayPlannerSettingsTab extends PluginSettingTab {
             .addSlider(slider => 
             slider
                 .setLimits(1, 5, 1)
-                .setValue(this.plugin.settings.timelineZoomLevel ?? 2)
+                .setValue(this.plugin.settings.timelineZoomLevel ?? TIMELINE_DEFAULT_ZOOM)
                 .setDynamicTooltip()
                 .onChange((value:number) => {
                 this.plugin.settings.timelineZoomLevel = value;

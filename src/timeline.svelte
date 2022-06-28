@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import { onDestroy } from "svelte";
     import { planSummary, now, nowPosition, zoomLevel } from './timeline-store';
+    import { TIMELINE_DEFAULT_ZOOM } from './constants';
     import type { PlanItem, PlanSummaryData } from './plan-data';
     const moment = (window as any).moment;
 
@@ -26,7 +27,7 @@
         currentTime = val;
         scrollToPosition(position - 150);
         if(!timelineZoomLevel) {
-          timelineZoomLevel = 4;
+          timelineZoomLevel = TIMELINE_DEFAULT_ZOOM;
         }
     });
 
@@ -377,7 +378,7 @@ color:#fff;
       </div>
       
       <div id="scroll-controls">
-        <label for="auto-scroll">Track time</label>
+        <label for="auto-scroll">Track current time</label>
         <input id="auto-scroll" type="checkbox" class="toggle" bind:checked={autoScroll}>
       </div>
   </div>

@@ -1,8 +1,10 @@
+import { TIMELINE_DEFAULT_ZOOM } from "./constants";
+
 export class DayPlannerSettings {
   circularProgress: boolean = false;
   nowAndNextInStatusBar: boolean = false;
   showTaskNotification: boolean = false
-  timelineZoomLevel: number = 4;
+  timelineZoomLevel: number = TIMELINE_DEFAULT_ZOOM;
   timelineIcon: string = 'calendar-with-checkmark'
 }
 
