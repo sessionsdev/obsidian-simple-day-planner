@@ -24,7 +24,7 @@ export default class DayPlanner extends Plugin {
   timelineView: TimelineView;
   
   async onload() {
-    console.log("Loading Day Planner plugin");
+    console.log("Loading Simple Day Planner plugin");
     this.vault = this.app.vault;
     this.settings = Object.assign(new DayPlannerSettings(), await this.loadData());
     this.notesForDatesQuery = new NoteForDateQuery();
@@ -46,7 +46,7 @@ export default class DayPlanner extends Plugin {
 
     this.addCommand({
       id: 'app:show-day-planner-timeline',
-      name: 'Show the Day Planner Timeline',
+      name: 'Show the Simple Day Planner Timeline',
       callback: () => this.initLeaf(),
       hotkeys: []
     });
@@ -95,7 +95,7 @@ export default class DayPlanner extends Plugin {
     }
     
     onunload() {
-      console.log("Unloading Day Planner plugin");
+      console.log("Unloading Simple Day Planner plugin");
       this.app.workspace
       .getLeavesOfType(VIEW_TYPE_TIMELINE)
       .forEach((leaf) => leaf.detach());

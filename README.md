@@ -20,13 +20,15 @@ What does simple mean?
 - Status bar updates on progress with information on your current and next tasks. You can click on the status bar to access the note for today's day planner.
 - Timeline view showing your tasks laid out on a vertical timeline.
 
+
+TODO! I need to replace this image with an accurate image.
 ![Day Planner Demo Image](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/day-planner-note-preview.png)
 
 ## Usage
 
-Once installed, the plugin will read your daily note as configured by the obsidian daily note plugin to display your daily plan.
+Once installed, the plugin will read your daily note to parse and display your plan.
 
-### Day Planner Note
+### Daily Note
 
 Within the note, you can create a list of times and tasks which will be automatically be tracked during the day. You can include headings and other content between tasks.  See [examples/day-planner-example.md](examples/day-planner-example.md) for an example.
 
@@ -105,7 +107,7 @@ This plugin depends on the Obsidian Daily Note plugin.
 
 ## Installing
 
-## Manual installation
+### Manual installation
 
 1. Download the [latest release](https://github.com/jdbeightol/obsidian-simple-day-planner/releases/latest)
 1. Extract the obsidian-simple-day-planner folder from the zip to your vault's plugins folder: `<vault>/.obsidian/plugins/`  

@@ -21,7 +21,7 @@ export default class TimelineView extends ItemView {
     }
 
     getDisplayText(): string {
-        return 'Day Planner Timeline';
+        return 'Simple Day Planner Timeline';
     }
 
     getIcon() {
