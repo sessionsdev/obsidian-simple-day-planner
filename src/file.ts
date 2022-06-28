@@ -1,4 +1,3 @@
-import { moment, now } from 'moment';
 import { normalizePath, Vault } from 'obsidian';
 import MomentDateRegex from './moment-date-regex';
 import { DayPlannerSettings, NoteForDateQuery } from './settings';
@@ -20,7 +19,7 @@ export default class DayPlannerFile {
 
 
     todayPlannerFilePath(): string {
-        const b = getDailyNote(moment(now()), getAllDailyNotes()).basename;
+        const b = getDailyNote(window.moment(), getAllDailyNotes()).basename;
         const f = getDailyNoteSettings().folder;
         return normalizePath(`${f}/${b}`);
     }
