@@ -1,4 +1,5 @@
 import type { Workspace } from 'obsidian';
+import { BREAK_LABEL, END_LABEL } from './constants';
 import type DayPlannerFile from './file';
 import type { PlanItem, PlanSummaryData } from './plan-data';
 import type PlannerMarkdown from './planner-md';
@@ -99,7 +100,7 @@ export default class StatusBar {
     private updateProgress(current: PlanItem, next: PlanItem) {
         if(!current || !next || current.isEnd){
             this.hideProgress();
-            this.statusBarText.innerText = this.settings.endLabel;
+            this.statusBarText.innerText = END_LABEL;
             return;
         }
         const { percentageComplete, minsUntilNext } = this.progress.getProgress(current, next);
@@ -142,7 +143,7 @@ export default class StatusBar {
         this.show(this.nextText);
       } else {
         this.hide(this.nextText);
-        const statusText = (current.isBreak ? `${this.settings.breakLabel} for ${minsText}` : `${minsText} left`);
+        const statusText = (current.isBreak ? `${BREAK_LABEL} for ${minsText}` : `${minsText} left`);
         this.statusBarText.innerText = statusText;
       }
       const currentTaskStatus = `Current Task (${percentageComplete.toFixed(0)}% complete)`;

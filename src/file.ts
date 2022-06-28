@@ -19,9 +19,9 @@ export default class DayPlannerFile {
 
 
     todayPlannerFilePath(): string {
-        const b = getDailyNote(window.moment(), getAllDailyNotes()).basename;
-        const f = getDailyNoteSettings().folder;
-        return normalizePath(`${f}/${b}`);
+        const { basename, extension } = getDailyNote(window.moment(), getAllDailyNotes());
+        const { folder } = getDailyNoteSettings();
+        return normalizePath(`${folder}/${basename}.${extension}`);
     }
 
     hasTodayNote(): boolean {
