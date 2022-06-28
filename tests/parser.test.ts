@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import path from 'path';
 import { expect } from 'chai';
 
+import { BREAK_LABEL, END_LABEL } from '../src/constants';
 import Parser from '../src/parser';
 import { DayPlannerSettings } from '../src/settings';
 
@@ -30,24 +31,24 @@ describe('parser', () => {
     expect(fourthItem.isBreak).to.be.true;
     expect(fourthItem.isEnd).to.be.false;
     expect(fourthItem.rawTime).to.eql('11:00');
-    expect(fourthItem.text).to.eql('☕️ COFFEE BREAK');
+    expect(fourthItem.text).to.eql(BREAK_LABEL);
 
     const fifthItem = results.items[4];
     expect(fifthItem.isBreak).to.be.false;
     expect(fifthItem.isEnd).to.be.false;
     expect(fifthItem.rawTime).to.eql('11:10');
-    expect(fifthItem.text).to.eql('reading');
+    expect(fifthItem.text).to.eql('read 1 article');
 
     const seventhItem = results.items[6];
     expect(seventhItem.isBreak).to.be.true;
     expect(seventhItem.isEnd).to.be.false;
     expect(seventhItem.rawTime).to.eql('13:00');
-    expect(seventhItem.text).to.eql('☕️ COFFEE BREAK');
+    expect(seventhItem.text).to.eql(BREAK_LABEL);
 
     const ninthItem = results.items[8];
     expect(ninthItem.isBreak).to.be.false;
     expect(ninthItem.isEnd).to.be.true;
     expect(ninthItem.rawTime).to.eql('14:00');
-    expect(ninthItem.text).to.eql('🛑 FINISH');
+    expect(ninthItem.text).to.eql(END_LABEL);
   });
 });

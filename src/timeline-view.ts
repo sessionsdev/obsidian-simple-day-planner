@@ -4,6 +4,7 @@ import { planSummary, now, nowPosition, zoomLevel } from './timeline-store';
 import { VIEW_TYPE_TIMELINE } from './constants';
 import type { PlanSummaryData } from './plan-data';
 import type { DayPlannerSettings } from './settings';
+
 const moment = (window as any).moment;
 
 export default class TimelineView extends ItemView {

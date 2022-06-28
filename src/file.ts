@@ -2,9 +2,7 @@ import { now } from 'moment';
 import { Vault } from 'obsidian';
 import MomentDateRegex from './moment-date-regex';
 import { DayPlannerSettings, NoteForDateQuery } from './settings';
-import {
-    getDailyNote,
-} from "obsidian-daily-notes-interface";
+import { getDailyNote } from "obsidian-daily-notes-interface";
   
 
 export default class DayPlannerFile {
