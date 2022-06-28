@@ -1,9 +1,9 @@
-import { now } from 'moment';
-import { Vault } from 'obsidian';
+import { moment, now } from 'moment';
+import { normalizePath, Vault } from 'obsidian';
 import MomentDateRegex from './moment-date-regex';
 import { DayPlannerSettings, NoteForDateQuery } from './settings';
-import { getDailyNote } from "obsidian-daily-notes-interface";
-  
+import { getAllDailyNotes, getDailyNote, getDailyNoteSettings } from "obsidian-daily-notes-interface";
+
 
 export default class DayPlannerFile {
     vault: Vault;
@@ -20,7 +20,9 @@ export default class DayPlannerFile {
 
 
     todayPlannerFilePath(): string {
-        return getDailyNote(now());
+        const b = getDailyNote(moment(now()), getAllDailyNotes()).basename;
+        const f = getDailyNoteSettings().folder;
+        return normalizePath(`${f}/${b}`);
     }
 
     hasTodayNote(): boolean {
@@ -33,7 +35,6 @@ export default class DayPlannerFile {
 
     async getFileContents(){
         if (!this.hasTodayNote()) {
-            // TODO Create if not exist or return empty?
             return ""
         }
         try {

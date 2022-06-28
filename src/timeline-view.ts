@@ -8,7 +8,7 @@ import type { DayPlannerSettings } from './settings';
 const moment = (window as any).moment;
 
 export default class TimelineView extends ItemView {
-    private timeline:Timeline;
+    private timeline: Timeline;
     private settings: DayPlannerSettings;
 
     constructor(leaf: WorkspaceLeaf, settings: DayPlannerSettings){
