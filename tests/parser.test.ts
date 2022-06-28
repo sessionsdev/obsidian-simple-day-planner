@@ -7,14 +7,12 @@ import { BREAK_LABEL, END_LABEL } from '../src/constants';
 import Parser from '../src/parser';
 import { DayPlannerSettings } from '../src/settings';
 
+// All tests here are dependent upon the content of fixtures/test.md.  A change there will likely require a change here.
 describe('parser', () => {
   it('should return parsed items', async () => {
     const fileContents = fs.readFileSync(path.join(__dirname, 'fixtures/test.md')).toString().split('\n');
-
     const settings = new DayPlannerSettings();
-
     const parser = new Parser(settings);
-
     const results = await parser.parseMarkdown(fileContents);
 
     expect(results.empty).to.be.false;
