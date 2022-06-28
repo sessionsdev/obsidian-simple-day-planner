@@ -2,16 +2,17 @@
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jdbeightol/obsidian-simple-day-planner/Release%20Build?logo=github&style=for-the-badge) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jdbeightol/obsidian-simple-day-planner?style=for-the-badge&sort=semver)
 
-
 This repository contains a plugin for [Obsidian](https://obsidian.md/) for day planning from a list in a Markdown note.  It was forked from James Lynch's [Obsidian Day Planner](https://github.com/lynchjames/obsidian-day-planner) plugin and serves as a simpler implementation.
 
-What does simpler mean?
+What does simple mean?
 - This plugin shall not mutate a user's notes i.e.,
-  - Removal of automatic completion of tasks
-  - Removal of automated management of mermaid gantt charts
-- This plugin shall prefer convention over configuration for its workflow i.e.,
-  - File mode has been changed to support a user's daily note as managded by the Obsidian daily note plugin
-  - Command mode has been fully removed
+    - removed automatic completion of tasks
+    - removed mermaid gantt chart support
+- This plugin shall leverage Obsidian conventions i.e.,
+    - updated file mode to utilize a user's daily note via the Obsidian daily note plugin
+    - removed command mode
+- This plugin shall enable users to express the structure of their plan i.e.,
+    - added support for plan lists without checklists
 
 ## Features
 
@@ -98,7 +99,9 @@ This is the zoom level to dispaly the timeline. The higher the number, the more 
 
 Custom plugins are only available for Obsidian v0.9.7+.
 
-The current API of this repo targets Obsidian **v0.9.10**. 
+The current API of this repo targets Obsidian **v0.9.10**.
+
+This plugin depends on the Obsidian Daily Note plugin.
 
 ## Installing
 

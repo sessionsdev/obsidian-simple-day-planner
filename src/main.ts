@@ -4,9 +4,8 @@ import {
   Vault,
   WorkspaceLeaf, 
 } from 'obsidian';
-import type { Editor } from 'codemirror';
 import { DayPlannerSettingsTab } from './settings-tab';
-import { DayPlannerSettings, DayPlannerMode, NoteForDate, NoteForDateQuery } from './settings';
+import { DayPlannerSettings, NoteForDateQuery } from './settings';
 import StatusBar from './status-bar';
 import Progress from './progress';
 import PlannerMarkdown from './planner-md';
@@ -14,7 +13,6 @@ import DayPlannerFile from './file';
 import Parser from './parser';
 import { VIEW_TYPE_TIMELINE } from './constants';
 import TimelineView from './timeline-view';
-import { PlanSummaryData } from './plan-data';
 
 export default class DayPlanner extends Plugin {
   settings: DayPlannerSettings;

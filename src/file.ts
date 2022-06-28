@@ -1,13 +1,10 @@
 import { now } from 'moment';
-import { Vault, normalizePath } from 'obsidian';
-import { DAY_PLANNER_DEFAULT_CONTENT, DAY_PLANNER_FILENAME } from './constants';
+import { Vault } from 'obsidian';
 import MomentDateRegex from './moment-date-regex';
 import { DayPlannerSettings, NoteForDateQuery } from './settings';
 import {
-    createDailyNote,
     getDailyNote,
 } from "obsidian-daily-notes-interface";
-import moment from 'moment';
   
 
 export default class DayPlannerFile {
@@ -25,7 +22,7 @@ export default class DayPlannerFile {
 
 
     todayPlannerFilePath(): string {
-        return getDailyNote(moment(new Date()));
+        return getDailyNote(now());
     }
 
     hasTodayNote(): boolean {

@@ -1,20 +1,13 @@
+export const BREAK_LABEL="BREAK"
+export const END_LABEL="END"
+
 export const DEFAULT_DATE_FORMAT = 'YYYYMMDD';
 export const DATE_REGEX = /(?<target>{{date:?(?<date>[^}]*)}})/g;
 
-export const DAY_PLANNER_FILENAME = 'Day Planner-{{date}}.md';
-
-//https://regex101.com/r/VAxRnc/8
-export const PLAN_PARSER_REGEX_CREATOR = (breakLabel: string, endLabel: string) =>
-  new RegExp('^(((-?[\\s]*\\[?(?<completion>[x ]*)\\])(\\d.)?\\s*?(?<hours>\\d{1,2}):(?<minutes>\\d{2})\\s)((?<break>' + breakLabel + '[\\n ]?)|(?<end>' + endLabel + '[\\n ]?)|((?<text>.*))))$', 'gmi');
-
-export const MERMAID_REGEX = /```mermaid\ngantt[\S\s]*?```\s*/gmi;
-
-export const DAY_PLANNER_DEFAULT_CONTENT =
-`## Day Planner
-- [ ] `
+// https://regex101.com/r/reJ6Rg/1
+export const PLAN_PARSER_REGEX='^(((-(\\s+\\[?(?[x ])\\])?)(\\d.)?\\s+(?<hours>\\d{1,2}):(?<minutes>\\d{2})\\s+)((?<break>[Bb][Rr][Ee][Aa][Kk][\\n ]?)|(?<end>[Ee][Nn][Dd][\\n ]?)|((?<text>.*))))$'
 
 export const VIEW_TYPE_TIMELINE = 'timeline';
-export const MINUTE_MULTIPLIER = 4;
 
 export const ICONS = [
   'any-key',

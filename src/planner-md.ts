@@ -1,8 +1,7 @@
-import type { MarkdownView, Workspace } from 'obsidian';
-import { DAY_PLANNER_DEFAULT_CONTENT, MERMAID_REGEX } from './constants';
+import type { Workspace } from 'obsidian';
 import type DayPlannerFile from './file';
 import type Parser from './parser';
-import type { PlanItem, PlanSummaryData } from './plan-data';
+import type { PlanSummaryData } from './plan-data';
 import type Progress from './progress';
 import { DayPlannerSettings, NoteForDateQuery} from './settings';
 

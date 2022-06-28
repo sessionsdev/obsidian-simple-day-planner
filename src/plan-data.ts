@@ -1,4 +1,5 @@
 import type { DayPlannerSettings } from './settings';
+import { BREAK_LABEL, END_LABEL } from './constants';
 
 const moment = (window as any).moment;
 
@@ -52,7 +53,6 @@ export class PlanItem {
 
     matchIndex: number;
     charIndex: number;
-    isCompleted: boolean;
     isPast: boolean;
     isBreak: boolean;
     isEnd: boolean;
@@ -62,11 +62,9 @@ export class PlanItem {
     text: string;
     raw: string;
 
-    constructor(matchIndex: number, charIndex: number, isCompleted: boolean, 
-        isBreak: boolean, isEnd: boolean, time: Date, rawTime:string, text: string, raw: string){
+    constructor(matchIndex: number, charIndex: number, isBreak: boolean, isEnd: boolean, time: Date, rawTime:string, text: string, raw: string){
         this.matchIndex = matchIndex;
         this.charIndex = charIndex;
-        this.isCompleted = isCompleted;
         this.isBreak = isBreak;
         this.isEnd = isEnd;
         this.time = time;
@@ -83,17 +81,17 @@ export class PlanItemFactory {
         this.settings = settings;
     }
 
-    getPlanItem(matchIndex: number, charIndex: number, isCompleted: boolean, isBreak: boolean, isEnd: boolean, time: Date, rawTime: string, text: string, raw: string) {
+    getPlanItem(matchIndex: number, charIndex: number, isBreak: boolean, isEnd: boolean, time: Date, rawTime: string, text: string, raw: string) {
         const displayText = this.getDisplayText(isBreak, isEnd, text);
-        return new PlanItem(matchIndex, charIndex, isCompleted, isBreak, isEnd, time, rawTime, displayText, raw);
+        return new PlanItem(matchIndex, charIndex, isBreak, isEnd, time, rawTime, displayText, raw);
     }
 
     getDisplayText(isBreak: boolean, isEnd: boolean, text: string) {
         if(isBreak) {
-            return this.settings.breakLabel;
+            return BREAK_LABEL;
         }
         if(isEnd) {
-            return this.settings.endLabel;
+            return END_LABEL;
         }
         return text;
     }

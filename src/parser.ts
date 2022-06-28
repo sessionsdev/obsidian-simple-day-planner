@@ -1,4 +1,4 @@
-import { PLAN_PARSER_REGEX_CREATOR } from './constants';
+import { PLAN_PARSER_REGEX } from './constants';
 import { PlanItem, PlanItemFactory, PlanSummaryData } from './plan-data';
 import type { DayPlannerSettings } from './settings';
 
@@ -9,7 +9,7 @@ export default class Parser {
 
     constructor(settings: DayPlannerSettings) {
         this.planItemFactory = new PlanItemFactory(settings);
-        this.PLAN_PARSER_REGEX = PLAN_PARSER_REGEX_CREATOR(settings.breakLabel, settings.endLabel);
+        this.PLAN_PARSER_REGEX = new RegExp(PLAN_PARSER_REGEX, 'gmi');
     }
 
     async parseMarkdown(fileContent: string[]): Promise<PlanSummaryData> {
@@ -37,7 +37,6 @@ export default class Parser {
         const results = regexMatches.map((match) => {
             try {
                 const value = match.value;
-                const isCompleted = this.matchValue(value.groups.completion, 'x');
                 const isBreak = value.groups.break !== undefined;
                 const isEnd = value.groups.end !== undefined;
                 const time = new Date();
@@ -47,7 +46,6 @@ export default class Parser {
                 return this.planItemFactory.getPlanItem(
                     match.index, 
                     value.index, 
-                    isCompleted, 
                     isBreak,
                     isEnd,
                     time, 
