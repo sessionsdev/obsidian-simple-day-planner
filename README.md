@@ -40,8 +40,9 @@ Within the note, you can create a list of times and tasks which will be automati
 
 The format of the task list items is important as this is what is used to calculate the times of each task and the intervals between tasks. The format must be one of:
 
- `- HH:mm Task text` 
- `- [ ] HH:mm Task text`
+ ```- HH:mm Task text```
+ 
+ ```- [ ] HH:mm Task text```
  
  **24 hour times must be used.** 
 
