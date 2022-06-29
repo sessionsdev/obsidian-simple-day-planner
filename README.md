@@ -38,8 +38,6 @@ Once installed, the plugin will read your daily note to parse and display your p
 
 Within the note, you can create a list of times and tasks which will be automatically be tracked during the day. You can include headings and other content between tasks.  See [examples/day-planner-example.md](examples/day-planner-example.md) for an example.
 
-The `Day Planner` heading and `---` rule are used to identify the extent of the Day Planner. A heading must be used but can be `#`, `##`, `###` or `####`.
-
 The format of the task list items is important as this is what is used to calculate the times of each task and the intervals between tasks. The format must be one of:
 
  `- HH:mm Task text` 
@@ -47,7 +45,7 @@ The format of the task list items is important as this is what is used to calcul
  
  **24 hour times must be used.** 
 
- Nested checklist items or bullets are now also supported to capture sub-tasks of a timed task. Timed tasks must be at the top level of the checkbox list.
+ Nested checklist items or bullets are supported to capture sub-tasks of a timed task. Timed tasks must be at the top level of the checkbox list.
 
  `BREAK` and `END` are keywords that define breaks and the end to the time tracking for the tasks. They are not case sensitive so `break` and `end` can also be used.
 
