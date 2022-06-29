@@ -32,5 +32,5 @@ I use this time to review what I have done earlier in the day and complete any t
 - [ ] 15:00 Review notes and update daily note [[20201103]]
 - 15:45 Walk
 - 16:30 Reading
--[ ] 17:20 Prep for tomorrow's meetings
+- [ ] 17:20 Prep for tomorrow's meetings
 - 18:00 END

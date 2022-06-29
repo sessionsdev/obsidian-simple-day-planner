@@ -20,8 +20,6 @@ What does simple mean?
 - Status bar updates on progress with information on your current and next tasks. You can click on the status bar to access the note for today's day planner.
 - Timeline view showing your tasks laid out on a vertical timeline.
 
-
-TODO! I need to replace this image with an accurate image.
 ![Day Planner Demo Image](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/day-planner-note-preview.png)
 
 ## Usage
