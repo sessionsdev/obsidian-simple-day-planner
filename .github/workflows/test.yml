@@ -24,5 +24,4 @@ jobs:
     - name: resolve dependencies
       run: npm install
     - name: test
-      id: test
       run: npm test
