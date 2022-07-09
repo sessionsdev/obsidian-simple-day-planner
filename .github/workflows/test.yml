@@ -23,9 +23,9 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ~/.npm
-        key: npm-${{ hashFiles('package-lock.json') }}
+        key: npm-${{ hashFiles('package.json') }}
         restore-keys: npm-
     - name: install dependencies
-      run: npm ci --ignore-scripts
+      run: npm install
     - name: test
       run: npm test
