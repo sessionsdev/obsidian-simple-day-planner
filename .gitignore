@@ -1,7 +1,8 @@
+# macOS
 *.DS_Store
+
 # npm
 node_modules
-package-lock.json
 
 # build
 main.js
@@ -11,5 +12,3 @@ dist/
 coverage/
 .nyc_output/
 test-vault/
-
-TODO.md
