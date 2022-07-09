@@ -9,23 +9,22 @@ on:
       - main
       - feature/*
 
-env:
-  PLUGIN_NAME: obsidian-simple-day-planner
-
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js
+    - name: use node.js
       uses: actions/setup-node@v1
+    - name: npm package-lock.json ssh/https hack
+      run: git config --global url."https://github.com/".insteadOf ssh://git@github.com/
     - name: cache dependencies
       uses: actions/cache@v2
       with:
         path: ~/.npm
-        key: npm-${{ hashFiles('package.json') }}
+        key: npm-${{ hashFiles('package-lock.json') }}
         restore-keys: npm-
     - name: install dependencies
-      run: npm install
+      run: npm ci --ignore-scripts
     - name: test
       run: npm test
