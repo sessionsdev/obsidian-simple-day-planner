@@ -13,14 +13,12 @@ env:
   PLUGIN_NAME: obsidian-simple-day-planner
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v1
-      with:
-        node-version: '14.x' # You might need to adjust this value to your own version
     - name: resolve dependencies
       run: npm install
     - name: test
