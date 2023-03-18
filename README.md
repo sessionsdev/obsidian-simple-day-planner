@@ -1,6 +1,6 @@
 # Simple Day Planner
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jdbeightol/obsidian-simple-day-planner/test?logo=github&style=for-the-badge) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jdbeightol/obsidian-simple-day-planner?style=for-the-badge&sort=semver)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/sessionsdev/obsidian-simple-day-planner/test?logo=github&style=for-the-badge) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/sessionsdev/obsidian-simple-day-planner?style=for-the-badge&sort=semver)
 
 This repository contains a plugin for [Obsidian](https://obsidian.md/) for day planning from a list in a Markdown note.  It was forked from James Lynch's [Obsidian Day Planner](https://github.com/lynchjames/obsidian-day-planner) plugin and serves as a simpler implementation.
 
@@ -27,7 +27,7 @@ What does simple mean?
 
 ### Manual installation
 
-1. Download the [latest release](https://github.com/jdbeightol/obsidian-simple-day-planner/releases/latest)
+1. Download the [latest release](https://github.com/sessionsdev/obsidian-simple-day-planner/releases/latest)
 1. Extract the `obsidian-simple-day-planner` folder from the zip into your vault's `plugins` folder: `<vault>/.obsidian/plugins/`  
 Note: On some machines the `.obsidian` folder may be hidden. On MacOS you should be able to press `Command+Shift+Dot` to show the folder in Finder.
 1. Reload Obsidian
